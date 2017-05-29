@@ -3,3 +3,6 @@ language: node_js
 build:
   ci:
     - echo 'hello'
+    - docker build -t="riturajcse/sample_shippable:latest" .
+    - docker push riturajcse/sample_shippable:latest
+    
