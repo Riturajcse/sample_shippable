@@ -6,7 +6,7 @@ build:
     - docker build -t="riturajcse/sample_shippable:latest" .
     - docker push riturajcse/sample_shippable:latest
     
- integrations:
+integrations:
   hub:
     - integrationName: dockerhub
       type: docker
