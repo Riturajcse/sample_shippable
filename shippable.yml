@@ -5,7 +5,8 @@ build:
     - echo 'hello'
     - docker build -t="riturajcse/sample_shippable:$BRANCH.$BUILD_NUMBER" .
     - docker push riturajcse/sample_shippable:$BRANCH.$BUILD_NUMBER
-    - ssh ubuntu@54.200.54.152 sudo docker run -d -P --name "demoapp" riturajcse/sample_shippable:$BRANCH.$BUILD_NUMBER
+    - ssh ubuntu@54.200.54.152 sudo docker rm -f demoapp || true
+    - ssh ubuntu@54.200.54.152 sudo docker run -d -p 3000:3000 --name "demoapp" riturajcse/sample_shippable:$BRANCH.$BUILD_NUMBER
  
     
 integrations:
