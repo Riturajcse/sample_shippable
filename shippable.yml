@@ -4,7 +4,7 @@ build:
   ci:
     - echo 'hello'
     - docker build -t="riturajcse/sample_shippable:latest" .
-    - docker push riturajcse/sample_shippable:latest
+    - docker push riturajcse/sample_shippable:$BRANCH.$BUILD_NUMBER
     
 integrations:
   hub:
